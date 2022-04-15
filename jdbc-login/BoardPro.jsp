@@ -17,14 +17,14 @@
 	Class.forName("org.mariadb.jdbc.Driver");
 	
 	//2. 연결 객체 생성
-	String url = "jdbc:mariadb://localhost:3306/jaeyongdb";
+	String url = "jdbc:mariadb://localhost:3307/jaeyongdb";
 	String user = "jaeyong";
 	String pwd= "1111";
 	Connection con = DriverManager.getConnection(url, user, pwd);
 	
 	
 	//3. 생성된 연결을 통해 SQL문 실행 의뢰 준비
-	String sql = "INSERT INTO Board(title,name,pwd,content) VALUES(?,?,?,?)";
+	String sql = "INSERT INTO board(title,name,pwd,content) VALUES(?,?,?,?);";
 	
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	pstmt.setString(1, title);
@@ -42,3 +42,4 @@
 	
 	response.sendRedirect("Boardlist.jsp");
 %>
+

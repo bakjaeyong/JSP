@@ -16,7 +16,7 @@
 	Class.forName("org.mariadb.jdbc.Driver");
 	
 	//2. 연결 객체 생성
-	String url = "jdbc:mariadb://localhost:3306/jaeyongdb";
+	String url = "jdbc:mariadb://localhost:3307/jaeyongdb";
 	String user = "jaeyong";
 	String pwd= "1111";
 	Connection con = DriverManager.getConnection(url, user, pwd);
@@ -40,14 +40,3 @@
 	
 	response.sendRedirect("list.jsp");
 %>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>

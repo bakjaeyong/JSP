@@ -16,7 +16,7 @@
 	Connection con = DriverManager.getConnection(url, user, pwd);
 	
 	// 3. 연결후 그 통로를 통해 SQL문을 실행한다.
-	String sql = "select * from login";
+	String sql = "select * from board";
 	Statement stmt = con.createStatement();
 	
 	//4 SQL 실행
@@ -32,24 +32,31 @@
 <body>
 <table class="table">
 	<tr>
+		<td>title</td>
 		<td>name</td>
-		<td>id</td>
 		<td>pwd</td>
+		<td>content</td>
 	</tr>
 	<tr>
 <%
 	// 5. 반환된 데이터 출력
 	while(rs.next()){
+		String title = rs.getString("title");
 		String name = rs.getString("name");
-		String id = rs.getString("id");
-		String pw = rs.getString("pwd");
+		String pwd2 = rs.getString("pwd");
+		String content = rs.getString("content");
 %>
-		<td><a href="UpdateForm.jsp?id=<%=id%>"><%= id %></a></td>
-		<td><%= name %></td>
-		<td><%= pw %></td>
+		
+		<td><a href="BoardForm.jsp?title=<%=title%>"><%= title %></a></td>
+		
+		<td><%=name %></td>
+		<td><%=pwd2 %></td>
+		<td><%=content %></td>
+		
 	</tr>
 <% } %>
 </table>
+<button onclick="location.href='BoardInsert.jsp'">글쓰기</button>
 
 <%
 	

@@ -12,7 +12,7 @@
 	Class.forName("org.mariadb.jdbc.Driver");
 	
 	// 2. DB와의 연결(Connection)을 생성한다.
-	String url = "jdbc:mariadb://localhost:3306/jaeyongdb";
+	String url = "jdbc:mariadb://localhost:3307/jaeyongdb";
 	String user = "jaeyong";
 	String pwd= "1111";
 	Connection con = DriverManager.getConnection(url, user, pwd);
@@ -72,7 +72,7 @@
 	    	<input type="submit" value="수정">
 			</div>
 		</form>
-				<button type="button" onclick="location.href='delete.jsp'">삭제</button>
+				<button type="button" onclick="location.href='deletePro.jsp?id=<%=id %>'">삭제</button>
 				<button type="button" onclick="location.href='list.jsp'">돌아가기</button>
 	
 	</div>
